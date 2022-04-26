@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BenjaminCepedaExamen.Registro">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="BackgroundColor" Value="#77d065"/>
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="HeightRequest" Value="42"/>
+                <Setter Property="BorderRadius" Value="5"/>
+                <Setter Property="BorderWidth" Value="0" />
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+            <Style x:Key="TitleLabelStyle" TargetType="Label">
+                <Setter Property="VerticalTextAlignment" Value="End"/>
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="Medium"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Image Source="https://sbsconsulting.com.ec/wp-content/uploads/2018/01/LOGO-UISRAEL-768x209.png"/>
+            </Frame>
+            <Grid VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Text="Bienvenido" FontSize="Large" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="0" 
+                       Grid.ColumnSpan="2"/>
+                <Label x:Name="lblNombreUsuario" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
+                   Style="{ StaticResource TitleLabelStyle}" HorizontalTextAlignment="Center"/>
+                <Label Text="Nombe Estudiante: " Grid.Row="4" Grid.Column="0" Style="{ StaticResource TitleLabelStyle}" />
+                <Entry x:Name="txtNombreEstudiante" Placeholder="Ingrese nombre del estudiante" Grid.Row="4" Grid.Column="1"/>
+                <Label Text="Monto inicial: " Grid.Row="5" Grid.Column="0" Style="{ StaticResource TitleLabelStyle}" />
+                <Entry x:Name="txtMontoInicial" Placeholder="Ingrese monto incial" Grid.Row="5" Grid.Column="1" Keyboard="Numeric"/>
+                <Label Text="Pago mensual: " Grid.Row="6" Grid.Column="0" Style="{ StaticResource TitleLabelStyle}" />
+                <Entry x:Name="txtPagoMensual" Placeholder="" Grid.Row="6" Grid.Column="1" IsEnabled="false"/>
+                <Button x:Name="btnCalcular" Text="Calcular" Clicked="btnCalcular_Clicked" Style="{StaticResource ButtonStyle}" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <Button x:Name="btnEnviar" Text="Guardar" Clicked="btnEnviar_Clicked" Style="{StaticResource ButtonStyle}" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
